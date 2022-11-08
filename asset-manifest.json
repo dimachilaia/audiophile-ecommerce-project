@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/audiophile-ecommerce-project/static/css/main.89b65b56.css",
+    "main.js": "/audiophile-ecommerce-project/static/js/main.86af91ca.js",
+    "static/media/image-header.jpg": "/audiophile-ecommerce-project/static/media/image-header.d200a3583e72c7981f46.jpg",
+    "index.html": "/audiophile-ecommerce-project/index.html",
+    "main.89b65b56.css.map": "/audiophile-ecommerce-project/static/css/main.89b65b56.css.map",
+    "main.86af91ca.js.map": "/audiophile-ecommerce-project/static/js/main.86af91ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89b65b56.css",
+    "static/js/main.86af91ca.js"
+  ]
+}
