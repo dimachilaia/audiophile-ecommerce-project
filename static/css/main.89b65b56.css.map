@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.89b65b56.css","mappings":"AAAA,iBACI,qBAAsB,CACtB,8BAAgC,CAChC,QAAW,CACX,SACJ","sources":["index.css"],"sourcesContent":["*, ::before, ::after {\n    box-sizing: border-box;\n    font-family: Manrope, sans-serif;\n    margin: 0px;\n    padding: 0px;\n}"],"names":[],"sourceRoot":""}
