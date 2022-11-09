@@ -23,6 +23,7 @@ const SmallCart = () => {
                 <h3>+</h3>
         </NumbersCart>
       </SecondCart>
+      
 
       <SecondCart>
       <Info>
@@ -43,10 +44,7 @@ const SmallCart = () => {
             <h3>TOTAL</h3>
             <h4>$ 5,396</h4>
         </Total>
-
-          <div>
              <Button>checkout</Button>
-          </div>
     </Cart>
    
   )
@@ -56,10 +54,10 @@ export default SmallCart
 
 const Cart = styled.div`
    position:absolute;
-   height:51vh;
+   height:auto;
    width:calc(100% - 48px);
    z-index:2;
-   margin: 55px 20px;
+   margin: 45px 20px;
    background-color:white;
    border-radius:10px;
  div{
@@ -135,12 +133,16 @@ const Button= styled.button`
  background-color:#D87D4A;
  width:350px;
  height:48px;
- margin:10px 20px;
  text-decoration:none;
  border:none;
  color:white;
  text-align: center;
  letter-spacing: 1px;
+ align-items:center;
+ margin:50px auto;
+ display:flex;
+ justify-content:center;
+ align-items:center;
  text-transform: uppercase;
  color: #FFFFFF;
  border-radius:4px;
