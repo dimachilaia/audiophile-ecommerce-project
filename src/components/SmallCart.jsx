@@ -1,7 +1,12 @@
 import styled from "styled-components"
 import smallimage from '../assets/Group 22.svg'
 
+
+
+
+
 const SmallCart = () => {    
+  
   return (
     <Cart>
         <div>
@@ -60,6 +65,12 @@ const Cart = styled.div`
    margin: 45px 20px;
    background-color:white;
    border-radius:10px;
+
+   @media screen and (min-width: 768px) {
+    width:400px;
+    right:75px;
+  }
+
  div{
    display:flex;
    align-items:center;
@@ -131,7 +142,7 @@ const Total= styled.div`
 `
 const Button= styled.button`
  background-color:#D87D4A;
- width:350px;
+ width:80%;
  height:48px;
  text-decoration:none;
  border:none;
@@ -142,7 +153,6 @@ const Button= styled.button`
  margin:50px auto;
  display:flex;
  justify-content:center;
- align-items:center;
  text-transform: uppercase;
  color: #FFFFFF;
  border-radius:4px;

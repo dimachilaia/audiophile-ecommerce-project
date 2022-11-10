@@ -9,7 +9,8 @@ import speakerimage from '../assets/fi.svg'
 import earphonesimage from '../assets/fo.svg'
 import pathimage from '../assets/Path 2.svg'
 import SmallCart from './SmallCart';
-
+import TabletChangedHeader from './TabletChangedHeader';
+import desktopimage from '../assets/home/desktop/image-hero.jpg'
 
 const Header = () => {
   const [showScroll, setShowScroll] = useState(false)
@@ -26,8 +27,11 @@ const Header = () => {
   return (
     <MainHeader>
       <Head>
-        <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px'}} onClick={showScrollHandler}/>
+       <MobileImage>
+        <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
+        </MobileImage>
         <img src={audioimage} alt="textimage"/>
+        <TabletChangedHeader/>
         <img src={cartimage} alt="cartimg" onClick={showCartHandler}/>
         </Head>
         <hr/>
@@ -74,8 +78,8 @@ const Header = () => {
             <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
             <button>SEE PRODUCT</button>
         </div>
-
         </BgImageCont>
+
     </MainHeader>
   )
 }
@@ -100,7 +104,6 @@ const Head = styled.div`
     color:white;
     font-size:20px;
     font-family: 'Manrope';
-
     font-style: normal;
     font-weight: 900;
   }
@@ -117,7 +120,6 @@ const ScrollHeader = styled.div`
   background-color:white;
   margin-top:33px;
   height:100vh;
-
   div{
     display:flex;
     width:90%;
@@ -152,11 +154,13 @@ const ScrollHeader = styled.div`
       margin:3px 10px;
     }
   } 
-
   img{
     position:absolute;
     margin-bottom:150px;
  }
+ @media screen and (min-width: 768px) {
+    display:none;
+  }
 `
 
 const BgImageCont = styled.div`
@@ -166,6 +170,14 @@ const BgImageCont = styled.div`
  background-position:center center;
  width:100%;
  height:95vh;
+ @media screen and (min-width: 768px) {
+    background-image:url(${desktopimage});
+    display:flex;
+    width:84%;
+    height:84vh;
+    background-position:right;
+    margin:20px auto;
+  }
  div{
   color:white;
   text-align:center;
@@ -192,17 +204,20 @@ const BgImageCont = styled.div`
   margin-top:20px;
   width:320px;
   margin:10px auto;
+  @media screen and (min-width: 768px) {
+    font-size:42px;
+  line-height: 52px;
+  }
  }
  p{
   font-weight: 500;
   font-size: 15px;
   line-height: 25px;
-  text-align: center;
   color: #FFFFFF;
   mix-blend-mode: normal;
   opacity: 0.75;
   width:320px;
-  margin:10px auto;
+  margin:0 auto;
  }
  button{
   background: #D87D4A;
@@ -217,4 +232,9 @@ const BgImageCont = styled.div`
   border:none;
   line-height: 18px;
  }
+`
+const MobileImage = styled.div`
+  @media screen and (min-width: 768px) {
+    display:none;
+  }
 `
