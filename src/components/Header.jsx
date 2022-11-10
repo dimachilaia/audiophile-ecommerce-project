@@ -158,9 +158,6 @@ const ScrollHeader = styled.div`
     position:absolute;
     margin-bottom:150px;
  }
- @media screen and (min-width: 768px) {
-    display:none;
-  }
 `
 
 const BgImageCont = styled.div`
@@ -169,7 +166,7 @@ const BgImageCont = styled.div`
  background-size:contain;
  background-position:center center;
  width:100%;
- height:95vh;
+ height:100vh;
  @media screen and (min-width: 768px) {
     background-image:url(${desktopimage});
     display:flex;
@@ -231,6 +228,11 @@ const BgImageCont = styled.div`
   outline:none;
   border:none;
   line-height: 18px;
+  cursor:pointer;
+  &:hover{
+    opacity:0.8;
+    transition:0.35s;
+  }
  }
 `
 const MobileImage = styled.div`
