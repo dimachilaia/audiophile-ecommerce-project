@@ -1,23 +1,26 @@
 {
   "files": {
     "main.css": "/audiophile-ecommerce-project/static/css/main.c77b8035.css",
-    "main.js": "/audiophile-ecommerce-project/static/js/main.042165bb.js",
+    "main.js": "/audiophile-ecommerce-project/static/js/main.c0f23ab8.js",
+    "static/media/sectionimag.svg": "/audiophile-ecommerce-project/static/media/sectionimag.aa26bd328125e8ab16fefb5ee1e4b0f1.svg",
     "static/media/fi.svg": "/audiophile-ecommerce-project/static/media/fi.58a541592ba37869a9698f1e9f2932a4.svg",
     "static/media/Group 22.svg": "/audiophile-ecommerce-project/static/media/Group 22.a3a6919bb4cae8dca7e7ffbc23cc10e1.svg",
     "static/media/fo.svg": "/audiophile-ecommerce-project/static/media/fo.681f7b96d57e4f9ac84f7b6e91bfcbcd.svg",
+    "static/media/image-best-gear.jpg": "/audiophile-ecommerce-project/static/media/image-best-gear.4d4a28e9e7c9ab158dd8.jpg",
     "static/media/image-header.jpg": "/audiophile-ecommerce-project/static/media/image-header.d200a3583e72c7981f46.jpg",
     "static/media/image-hero.jpg": "/audiophile-ecommerce-project/static/media/image-hero.55c18e980adf7658ae26.jpg",
     "static/media/headphone.png": "/audiophile-ecommerce-project/static/media/headphone.7d9b89c6b0d365b716a7.png",
+    "static/media/image-speaker-zx7.jpg": "/audiophile-ecommerce-project/static/media/image-speaker-zx7.173a4cb5c7acfc7f300c.173a4cb5c7acfc7f300c.jpg",
     "static/media/audiophile.svg": "/audiophile-ecommerce-project/static/media/audiophile.d4fa59f404ac9239cd5b68b4c4548898.svg",
     "static/media/Combined Shape.svg": "/audiophile-ecommerce-project/static/media/Combined Shape.b90aa47998bbccc14d36461efe5107a2.svg",
     "index.html": "/audiophile-ecommerce-project/index.html",
     "static/media/Path 2.svg": "/audiophile-ecommerce-project/static/media/Path 2.aefddf297740fe9b50fc97d86c1332ea.svg",
     "static/media/icon-hamburger.svg": "/audiophile-ecommerce-project/static/media/icon-hamburger.05a40a49142005f6faf230286ab38214.svg",
     "main.c77b8035.css.map": "/audiophile-ecommerce-project/static/css/main.c77b8035.css.map",
-    "main.042165bb.js.map": "/audiophile-ecommerce-project/static/js/main.042165bb.js.map"
+    "main.c0f23ab8.js.map": "/audiophile-ecommerce-project/static/js/main.c0f23ab8.js.map"
   },
   "entrypoints": [
     "static/css/main.c77b8035.css",
-    "static/js/main.042165bb.js"
+    "static/js/main.c0f23ab8.js"
   ]
 }
