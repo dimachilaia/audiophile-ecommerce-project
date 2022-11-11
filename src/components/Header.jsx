@@ -11,6 +11,7 @@ import pathimage from '../assets/Path 2.svg'
 import SmallCart from './SmallCart';
 import TabletChangedHeader from './TabletChangedHeader';
 import desktopimage from '../assets/home/desktop/image-hero.jpg'
+import Sections from './Sections';
 
 const Header = () => {
   const [showScroll, setShowScroll] = useState(false)
@@ -25,6 +26,7 @@ const Header = () => {
   }
 
   return (
+    <FirstHeader>
     <MainHeader>
       <Head>
        <MobileImage>
@@ -79,12 +81,18 @@ const Header = () => {
             <button>SEE PRODUCT</button>
         </div>
         </BgImageCont>
-
     </MainHeader>
+    <Sections/>
+    </FirstHeader>
   )
 }
 
 export default Header
+
+const FirstHeader = styled.div`
+
+`
+
 const MainHeader = styled.div`
  background-color:rgb(25, 25, 25);
  hr{
@@ -178,8 +186,10 @@ const BgImageCont = styled.div`
  div{
   color:white;
   text-align:center;
-  height:40vh;
   padding-top:180px;
+  @media screen and (min-width: 768px) {
+   text-align:left;
+  }
  }
  h4{
   font-weight: 400;
@@ -189,6 +199,7 @@ const BgImageCont = styled.div`
   text-transform: uppercase;
   color: #FFFFFF;
   opacity: 0.5;
+ 
  }
  h5{
   font-weight: 700;
@@ -204,6 +215,7 @@ const BgImageCont = styled.div`
   @media screen and (min-width: 768px) {
     font-size:42px;
   line-height: 52px;
+  text-align:left;
   }
  }
  p{
@@ -215,6 +227,7 @@ const BgImageCont = styled.div`
   opacity: 0.75;
   width:320px;
   margin:0 auto;
+
  }
  button{
   background: #D87D4A;

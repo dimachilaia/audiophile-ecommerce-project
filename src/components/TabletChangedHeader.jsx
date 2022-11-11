@@ -4,10 +4,10 @@ import styled from 'styled-components'
 const TabletChangedHeader = () => {
   return (
     <TabletHeader>
-     <h4>HOME</h4>
-     <h4>HEADPHONES</h4>
-     <h4>SPEAKERS</h4>
-     <h4>EARPHONES</h4>
+        <h4>HOME</h4>
+        <h4>HEADPHONES</h4>
+        <h4>SPEAKERS</h4>
+        <h4>EARPHONES</h4>
     </TabletHeader>
   )
 }

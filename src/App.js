@@ -11,7 +11,6 @@ function App() {
      <Routes>
        <Route path='audiophile-ecommerce-project' element={<Header/>}/>
      </Routes>
-      <Sections/>
     </Fragment>
   );
 }

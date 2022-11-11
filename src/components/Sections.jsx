@@ -4,10 +4,15 @@ import headphoneimage from '../assets/headphone.png'
 import speakerimage from '../assets/fi.svg'
 import earphonesimage from '../assets/fo.svg'
 import pathimage from '../assets/Path 2.svg'
-
+import firstsectionimage from '../assets/sectionimag.svg'
+import tableimage from '../assets/image-speaker-zx7.173a4cb5c7acfc7f300c.jpg'
+import sectimage from '../assets/home/desktop/image-earphones-yx1.jpg'
+import personimage from '../assets/shared/mobile/image-best-gear.jpg'
+import personimage2 from '../assets/shared/desktop/image-best-gear.jpg'
 
 const Sections = () => {
   return (
+    <MainSection>
     <Section>
       <FirstSectContainer>
         <Img src={headphoneimage} alt="headphone"/>
@@ -37,19 +42,67 @@ const Sections = () => {
        <img src={pathimage} alt="pathimage"/>
       </h4>
     </HeadphonesInfo>
-  </FirstSectContainer>
-    </Section>
+   </FirstSectContainer>
+  </Section>
+
+  <SecondSectionsContainer>
+  <div>
+     <ForImage>
+        <img src={firstsectionimage} alt="firstimg"/>
+     </ForImage>
+     <SectionTexts>
+      <h4>ZX9 SPEAKER</h4>
+      <p>Upgrade to premium speakers Upgrade to premium speakers t Upgrade to premium speakers tthat are phenomenally built to deliver truly remarkable sound.</p>
+      <button>SEE PRODUCT</button>
+     </SectionTexts>
+     </div>
+     </SecondSectionsContainer>
+     
+     <SpeakerCont>
+      <div>
+        <h4>ZX7 SPEAKER</h4>
+        <button>SEE PRODUCT</button>
+      </div>
+    </SpeakerCont>
+
+      <FlexedSection>
+        <img src={sectimage} alt="tableimg"/>
+
+         <div>
+           <h5>YX1 EARPHONES</h5>
+           <button>See Product</button>
+        </div>
+      </FlexedSection>
+
+      <LastSection>
+         <MobileImage>
+           <img src={personimage} alt="personimage"/>
+         </MobileImage>
+         <DesktopImage>
+           <img src={personimage2} alt="personimage"/>
+         </DesktopImage>
+         <LastSecTexts>
+              <h4>Bringing you the <span>best</span> audio gear</h4>
+              <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+         </LastSecTexts>
+         </LastSection>
+    </MainSection>
   )
 }
 
 export default Sections
 
+const MainSection = styled.div`
+
+@media screen and (min-width: 1024px) {
+  padding:60px 60px;
+ }
+`
 const Section = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (min-width: 1024px) {
     display:flex;
-    justify-content:space-around;
-    gap:30px;
-  }
+    justify-content:space-evenly;
+ }
 `
 
 const FirstSectContainer = styled.div`
@@ -59,12 +112,11 @@ background-color:#F1F1F1;
   width:327px;
   height:160px;
   border-radius:10px;
-  margin:50px auto;
-  @media screen and (min-width: 768px) {
-   width:223px;
-  }
+  margin:45px auto;
+
   @media screen and (min-width: 1024px) {
-    width:350px;
+    width:250px;
+    margin:33px auto;
   }
 
 `
@@ -100,5 +152,275 @@ const HeadphonesInfo = styled.div`
   img{
     margin-left:10px;
   }
+`
+const SecondSectionsContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background: #D87D4A;
+  border-radius: 8px;
+  width:327px;
+  padding-top:25px;
+  margin:0 auto;
+  @media screen and (min-width: 1024px) {
+    width:82%;
+    div{
+      display:flex;
+      justify-content:space-around;
+      gap:30px;
+    }
+  }
+  
+`
+
+const SectionTexts = styled.div`
+  text-align:center;
+  padding-top:55px;
+  height:350px;
+  @media screen and (min-width: 1024px) {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:500px;
+  }
+  h4{
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @media screen and (min-width: 1024px) {
+     font-size:64px;
+  }
+  }
+  p{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+    padding-top:10px;
+    @media screen and (min-width: 1024px) {
+      width:52%;
+  }
+  }
+  button{
+    @media screen and (min-width: 1024px) {
+      width:50%;
+      padding:30px 35px;
+      margin-top:-40px;
+      font-size:18px;
+    transition: all 0.2s ease-in-out 0s;
+  }
+    background: #000000;
+    padding:10px 20px;
+    font-size: 13px;
+    border-radius:4px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border:none;
+    cursor:pointer;
+    margin-top:30px;
+    &:hover{
+      opacity:0.65;
+    }
+  }
+`
+
+const ForImage = styled.div`
+ img{
+  display:flex;
+  margin:0 auto;
+ }
+ @media screen and (min-width: 1024px) {
+  width:450px;
+  height:450px;
+  transform:translate(12vh, 7vh);
+  }
+`
+
+const SpeakerCont = styled.div`
+  background-image:url(${tableimage});
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-size:88%;
+  background-position:center;
+  border-radius:10px;
+  margin-top:30px;
+  div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:280px;
+  }
+  h4{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top:20px;
+    @media screen and (min-width: 768px) {
+      font-size:24px;
+      text-align:center;
+    }
+  }
+  button{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 2px;
+    width:120px;
+    margin-top:25px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out 0s;
+    cursor:pointer;
+    &:hover{
+      background-color:black;
+      color:white;
+    }
+    @media screen and (min-width: 768px) {
+      width:225px;
+      padding:10px 20px;
+  }
+  }
+  @media screen and (min-width: 768px) {
+    background-size:600px;
+    height:40vh;
+    div{
+      padding:50px 290px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    background-size:82%;
+  }
+`
+const FlexedSection = styled.div`
+    @media screen and (min-width: 768px) {
+      display:flex;
+   }
+  img{
+    margin:30px auto;
+    display:flex;
+    width:327px;
+    @media screen and (min-width: 768px) {
+      width:35%;
+      height:320px;
+   }
+  }
+  div{
+    display:flex;
+    flex-direction:column;
+    margin:20px auto;
+    align-items:center;
+    background: #F1F1F1;
+    border-radius: 8px;
+    height:200px;
+    width:327px;
+    justify-content:center;
+    @media screen and (min-width: 768px) {
+      width:28%;
+      height:320px;
+   }
+ }
+  h5{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  button{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 11px 22px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top:20px;
+    transition: all 0.2s ease-in-out 0s;
+    cursor:pointer;
+    &:hover{
+      background-color:black;
+      color:white;
+    }
+  }
+`
+
+const LastSection = styled.div`
+     @media screen and (min-width: 1024px) {
+      display:flex;
+  }
  
+`
+
+const MobileImage = styled.div`
+   img{
+    margin:0 auto;
+    display:flex;
+    width:327px;
+    height:300px;
+  }
+  @media screen and (min-width: 768px) {
+     display:none;
+  }
+`
+const DesktopImage = styled.div`
+  display:none;
+  @media screen and (min-width: 768px) {
+    margin:0 auto;
+    display:flex;
+    width:500px;
+  }
+`
+const LastSecTexts = styled.div`
+  text-align:center;
+  margin-top:20px;
+  margin:103px auto;
+  width:327px;
+  h4{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    @media screen and (min-width: 768px) {
+        font-size: 40px;
+      line-height: 44px;
+      text-align:left;
+  }
+  @media screen and (min-width: 768px) {
+     span{
+      color:#D87D4A;
+     }
+  }
+  }
+  p{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+      text-align:left;
+      margin-top:35px;
+  }
+
+ 
+}
 `
