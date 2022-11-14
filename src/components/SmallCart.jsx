@@ -5,10 +5,10 @@ import smallimage from '../assets/Group 22.svg'
 
 
 
-const SmallCart = () => {    
+const SmallCart = ({showCart}) => {    
   
   return (
-    <Cart>
+    <Cart showCart={showCart}>
         <div>
          <h4>CART (4)</h4>
          <h5>Remove all</h5>
@@ -65,6 +65,9 @@ const Cart = styled.div`
    margin: 45px 20px;
    background-color:white;
    border-radius:10px;
+   opacity:${(props) => props.showCart && '1'};
+
+
 
    @media screen and (min-width: 768px) {
     width:400px;

@@ -9,10 +9,16 @@ import tableimage from '../assets/image-speaker-zx7.173a4cb5c7acfc7f300c.jpg'
 import sectimage from '../assets/home/desktop/image-earphones-yx1.jpg'
 import personimage from '../assets/shared/mobile/image-best-gear.jpg'
 import personimage2 from '../assets/shared/desktop/image-best-gear.jpg'
+import audioimg from '../assets/audiophile.svg'
+import fbicon from '../assets/fbicon.svg'
+import twittericon from '../assets/twitter.svg'
+import instaicon from '../assets/Shape.svg'
 
-const Sections = () => {
+const Sections = ({showScroll, showCart}) => {
   return (
-    <MainSection>
+    <MainSection showScroll={showScroll} showCart={showCart}>
+    <div>
+     <MainSectionDiv>
     <Section>
       <FirstSectContainer>
         <Img src={headphoneimage} alt="headphone"/>
@@ -84,8 +90,31 @@ const Sections = () => {
          <LastSecTexts>
               <h4>Bringing you the <span>best</span> audio gear</h4>
               <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
-         </LastSecTexts>
-         </LastSection>
+           </LastSecTexts>
+          </LastSection>
+         </MainSectionDiv>
+
+         <Footer>
+           <FooterDiv>
+            <Line></Line>
+              <img src={audioimg} alt="audioimage"/>
+               <h4>Home</h4>
+               <h4>HEADPHONES</h4>
+               <h4>SPEAKERS</h4>
+               <h4>EARPHONES</h4>
+           </FooterDiv> 
+            <SecFooterDiv>
+            <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+            <h4>&copy; Copyright 2023. All Rights Reserved</h4>
+            </SecFooterDiv>
+
+            <Icons>
+              <img src={fbicon} alt="fbicon"/>
+              <img src={twittericon} alt="twicon"/>
+              <img src={instaicon} alt="twicon"/>
+            </Icons>
+         </Footer>
+         </div>
     </MainSection>
   )
 }
@@ -93,15 +122,21 @@ const Sections = () => {
 export default Sections
 
 const MainSection = styled.div`
-
-@media screen and (min-width: 1024px) {
-  padding:60px 60px;
- }
+    opacity:${(props) => props.showScroll ? "0.07" : "1"};
+    display:${(props) => props.showCart && "none"};
+    
+  /* @media screen and (min-width: 768px) {
+    opacity:1;
+ } */
+`
+const MainSectionDiv = styled.div`
+  @media screen and (min-width: 1024px) {
+    padding:60px 60px;
+  }
 `
 const Section = styled.div`
  @media screen and (min-width: 1024px) {
     display:flex;
-    justify-content:space-evenly;
  }
 `
 
@@ -406,7 +441,7 @@ const LastSecTexts = styled.div`
       color:#D87D4A;
      }
   }
-  }
+}
   p{
     font-weight: 500;
     font-size: 15px;
@@ -423,4 +458,87 @@ const LastSecTexts = styled.div`
 
  
 }
+`
+
+const Footer = styled.div`
+    background: #101010;
+    color:white;
+    flex-direction:column;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    margin-top:20px;
+    @media screen and (min-width: 768px) {
+    align-items:center;
+  }
+`
+
+const FooterDiv = styled.div`
+   @media screen and (min-width: 768px) {
+    display:flex;
+    gap:50px;
+    align-items:center;
+  }
+   hr{
+    background-color:red;
+    color:red;
+   }
+   img{
+    margin-top:35px;
+   }
+   h4{
+    padding-top:25px;
+    :hover{
+      cursor:pointer;
+      color:#D87D4A;
+      transition: 0.32s;
+    }
+   }
+`
+
+const SecFooterDiv = styled.div`
+  margin-top:25px;
+  padding:10px 20px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+
+  h4{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    margin-top:25px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+  @media screen and (min-width: 768px) {
+    p{
+      width:640px;
+    }
+  }
+ 
+`
+
+const Line = styled.div`
+  background-color:#D87D4A;
+  height:3px;
+`
+
+const Icons = styled.div`
+  display:flex;
+  img{
+    padding:10px 20px;
+    cursor:pointer;
+    &:hover{
+      background-color:#D87D4A;
+      transition:0.32s;
+      border-radius:15px;
+    }
+  }
 `

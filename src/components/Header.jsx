@@ -18,29 +18,30 @@ const Header = () => {
   const [showCart, setShowCart] = useState(false)
 
 
-  const showScrollHandler = ()=>{
+ const showScrollHandler = ()=>{
     setShowScroll(prev=>!prev);
-  }
+ }
+
   const showCartHandler = ()=>{
-    setShowCart(!showCart)
-  }
+    setShowCart(!showCart);
+ }
 
   return (
-    <FirstHeader>
-    <MainHeader>
-      <Head>
+    <FirstHeader >
+      <MainHeader>
+       <Head>
        <MobileImage>
         <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
         </MobileImage>
         <img src={audioimage} alt="textimage"/>
         <TabletChangedHeader/>
-        <img src={cartimage} alt="cartimg" onClick={showCartHandler}/>
+        <img src={cartimage} alt="cartimg" onClick={showCartHandler} style={{cursor:'pointer'}}/>
         </Head>
         <hr/>
 
-        {showCart && <SmallCart /> }
+        {showCart && <SmallCart showCart = {showCart}/> }
       
-    { showScroll && <ScrollHeader>
+    { showScroll && <ScrollHeader >
      <div>
           <img src={headphoneimage} alt="headphone" />
           <div>
@@ -73,7 +74,7 @@ const Header = () => {
        </ScrollHeader> }
 
 
-      <BgImageCont>
+      <BgImageCont showCart={showCart}>
         <div>
             <h4>NEW PRODUCT</h4>
             <h5>XX99 Mark II HeadphoneS</h5>
@@ -82,7 +83,7 @@ const Header = () => {
         </div>
         </BgImageCont>
     </MainHeader>
-    <Sections/>
+    <Sections showScroll={showScroll} showCart={showCart}/>
     </FirstHeader>
   )
 }
@@ -128,6 +129,7 @@ const ScrollHeader = styled.div`
   background-color:white;
   margin-top:33px;
   height:100vh;
+
   div{
     display:flex;
     width:90%;
@@ -166,6 +168,9 @@ const ScrollHeader = styled.div`
     position:absolute;
     margin-bottom:150px;
  }
+ @media screen and (min-width: 768px) {
+    display:none;
+  }
 `
 
 const BgImageCont = styled.div`
@@ -175,6 +180,8 @@ const BgImageCont = styled.div`
  background-position:center center;
  width:100%;
  height:100vh;
+ opacity:${(props) => props.showCart ? "0.2" : "1"};
+
  @media screen and (min-width: 768px) {
     background-image:url(${desktopimage});
     display:flex;
@@ -227,7 +234,6 @@ const BgImageCont = styled.div`
   opacity: 0.75;
   width:320px;
   margin:0 auto;
-
  }
  button{
   background: #D87D4A;
@@ -248,6 +254,7 @@ const BgImageCont = styled.div`
   }
  }
 `
+
 const MobileImage = styled.div`
   @media screen and (min-width: 768px) {
     display:none;
