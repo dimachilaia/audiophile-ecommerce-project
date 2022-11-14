@@ -1,3 +1,5 @@
+//Mobile Burger Menu
+
 import React from 'react'
 import styled from 'styled-components'
 import headphoneimage from '../assets/headphone.png'
@@ -396,7 +398,6 @@ const LastSection = styled.div`
      @media screen and (min-width: 1024px) {
       display:flex;
   }
- 
 `
 
 const MobileImage = styled.div`

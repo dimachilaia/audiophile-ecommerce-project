@@ -2,15 +2,12 @@ import styled from "styled-components"
 import smallimage from '../assets/Group 22.svg'
 
 
-
-
-
-const SmallCart = ({showCart}) => {    
+const SmallCart = ({}) => {    
   
   return (
-    <Cart showCart={showCart}>
+    <Cart>
         <div>
-         <h4>CART (4)</h4>
+         <span>CART (4)</span>
          <h5>Remove all</h5>
         </div>
         
@@ -18,7 +15,7 @@ const SmallCart = ({showCart}) => {
         <Info>
             <img src={smallimage} alt="small"/>
           <StaticInfo>
-           <h4>XX99 MK II</h4>
+           <span>XX99 MK II</span>
            <h6>$ 2,999</h6>
           </StaticInfo>
         </Info>
@@ -34,7 +31,7 @@ const SmallCart = ({showCart}) => {
       <Info>
           <img src={smallimage} alt="small"/>
         <StaticInfo>
-         <h4>XX99 MK II</h4>
+         <span>XX99 MK II</span>
          <h6>$ 2,999</h6>
         </StaticInfo>
       </Info>
@@ -65,7 +62,6 @@ const Cart = styled.div`
    margin: 45px 20px;
    background-color:white;
    border-radius:10px;
-   opacity:${(props) => props.showCart && '1'};
 
 
 
@@ -80,7 +76,7 @@ const Cart = styled.div`
    justify-content:space-around;
    transform:translateY(40px);
 }
- h4{
+span{
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;

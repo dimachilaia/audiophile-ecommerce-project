@@ -1,13 +1,25 @@
+// Desktop Header
+
 import React from 'react'
+import {  NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const TabletChangedHeader = () => {
+
   return (
     <TabletHeader>
-        <h4>HOME</h4>
-        <h4>HEADPHONES</h4>
-        <h4>SPEAKERS</h4>
-        <h4>EARPHONES</h4>
+          <NavLink to="/audiophile-ecommerce-project" style={({isActive})=>{
+            // return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}>HOME</NavLink>
+          <NavLink to="/audiophile-ecommerce-project/headphones" style={({isActive})=>{
+            return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}>HEADPHONES</NavLink>
+          <NavLink to="/audiophile-ecommerce-project/speakers" style={({isActive})=>{
+            return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}>SPEAKERS</NavLink>
+          <NavLink to="/audiophile-ecommerce-project/earphones" style={({isActive})=>{
+            return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}>EARPHONES</NavLink>
     </TabletHeader>
   )
 }
@@ -26,7 +38,7 @@ display:none;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #FFFFFF;
-    h4:hover{
+    Link:hover{
         color:#D87D4A;
         cursor:pointer;
         transition: 0.4s;
@@ -40,4 +52,8 @@ display:none;
     text-transform: uppercase;
     color: #FFFFFF;
   }
+`
+
+const StyledLink = styled(NavLink)`
+ outline:none;
 `
