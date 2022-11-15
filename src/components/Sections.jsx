@@ -124,7 +124,7 @@ export default Sections
 
 const MainSection = styled.div`
     opacity:${(props) => props.showScroll ? "0.07" : "1"};
-    display:${(props) => props.showCart && "none"};
+    opacity:${(props) => props.showCart ? "0.07" : "1"};
     
   /* @media screen and (min-width: 768px) {
     opacity:1;

@@ -15,9 +15,9 @@ import audioimg from '../assets/audiophile.svg'
 import twittericon from '../assets/twitter.svg'
 import instaicon from '../assets/Shape.svg'
 
-const SecondContainer = () => {
+const SecondContainer = ({showScroll, showCart}) => {
   return (
-    <MainSectionContainer>
+    <MainSectionContainer showScroll={showScroll} showCart={showCart}>
       <Section>
       <FirstSectContainer>
         <Img src={headphoneimage} alt="headphone"/>
@@ -92,6 +92,9 @@ const SecondContainer = () => {
 export default SecondContainer
 
 const MainSectionContainer = styled.div`
+   opacity:${(props) => props.showScroll ? "0.3" : "1"};
+   opacity:${(props) => props.showCart ? "0.3" : "1"};
+   
 `
 
 const Section = styled.div`

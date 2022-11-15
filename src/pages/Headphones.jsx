@@ -17,29 +17,41 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
      </MainHeadphoneContainer>
 
        <FirstHeaderContainer showCart={showCart} showScroll={showScroll}>
-         <img src={headphoneimg} alt="headimg"/>
-         <h3>NEW PRODUCT</h3>
-         <h1>XX99 Mark II Headphones</h1>
-         <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-         <button>See Product</button>
-       </FirstHeaderContainer>
+          <ChangeContainer>
+            <img src={headphoneimg} alt="headimg"/>
+            <ForFlexCont >
+              <h3>NEW PRODUCT</h3>
+              <h1>XX99 Mark II Headphones</h1>
+              <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone  experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+              <button>See Product</button>
+            </ForFlexCont>
+          </ChangeContainer>
+          </FirstHeaderContainer>
 
        <FirstHeaderContainer showCart={showCart} showScroll={showScroll}>
-       <img src={headphoneimg2} alt="headimg2" style={{marginTop:'90px'}}/>
-       <h1>XX99 Mark I Headphones</h1>
-       <p>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
-       <button>See Product</button>
+         <ChangeContainer>
+            <img src={headphoneimg2} alt="headimg2" style={{marginTop:'90px'}}/>
+             <ForFlexCont>
+                <h1>XX99 Mark I Headphones</h1>
+                <p>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
+                <button>See Product</button>
+             </ForFlexCont>
+         </ChangeContainer>
      </FirstHeaderContainer>
 
 
-     <FirstHeaderContainer showCart={showCart} showScroll={showScroll}>
-     <img src={headphoneimg3} alt="headimg" style={{marginTop:'90px'}}/>
-     <h1>XX59 Headphones</h1>
-     <p>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-     <button>See Product</button>
-   </FirstHeaderContainer>
+       <FirstHeaderContainer showCart={showCart} showScroll={showScroll}>
+         <ChangeContainer>
+          <img src={headphoneimg3} alt="headimg" style={{marginTop:'90px'}}/>
+          <ForFlexCont >
+              <h1>XX59 Headphones</h1>
+              <p>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+              <button>See Product</button>
+          </ForFlexCont>
+        </ChangeContainer>
+     </FirstHeaderContainer>
 
-      <SecondContainer/>
+      <SecondContainer showCart={showCart} showScroll={showScroll}/>
     </HeadphoneContainer>
   )
 }
@@ -47,7 +59,6 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
 export default Headphones
 
 const HeadphoneContainer = styled.div`
-
   h4{
     text-align:center;
     transform:translateY(-50px);
@@ -63,17 +74,15 @@ const HeadphoneContainer = styled.div`
 `
 const MainHeadphoneContainer = styled.div`
     opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
-
 `
 
 const FirstHeaderContainer = styled.div`
-    opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
-
   display:flex;
   flex-direction:column;
   gap:10px;
   margin:20px auto;
   align-items:center;
+  opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
   img{
     width:327px;
     height:300px;
@@ -98,6 +107,7 @@ const FirstHeaderContainer = styled.div`
     text-transform: uppercase;
     color: #000000;
     width:327px;
+    margin-top:20px;
   }
   p{
     font-weight: 500;
@@ -129,8 +139,50 @@ const FirstHeaderContainer = styled.div`
     transition:0.35s;
   }
  }
+ @media screen and (min-width: 768px) {
+   h1{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+   }
+   p{
+        font-weight: 550;
+        font-size: 17px;
+        line-height: 25px;
+        margin-top:35px;
+        opacity:0.45;
+   }
+   button{
+    font-size: 16px;
+    width:200px;
+    height:55px;
+    border-radius:5px;
+   }
+}
+
+
 `
 
 
 // 
+const ChangeContainer = styled.div`
 
+  @media screen and (min-width: 768px) {
+    display:flex;
+  img{
+     width:450px;
+     height:500px;
+  }
+}
+`
+
+const ForFlexCont = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  @media screen and (min-width: 1024px) {
+     margin-left:25vh;
+  }
+`
