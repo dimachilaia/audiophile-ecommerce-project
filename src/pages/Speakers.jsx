@@ -96,7 +96,7 @@ const FirstHeaderContainer = styled.div`
     color: #000000;
     width:327px;
     margin-top:20px;
-  }
+    }
   p{
     font-weight: 500;
     font-size: 15px;

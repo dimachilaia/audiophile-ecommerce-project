@@ -123,8 +123,7 @@ const Sections = ({showScroll, showCart}) => {
 export default Sections
 
 const MainSection = styled.div`
-    opacity:${(props) => props.showScroll ? "0.07" : "1"};
-    opacity:${(props) => props.showCart ? "0.07" : "1"};
+    opacity:${(props) => props.showScroll ? "0.3" : "1" && props.showCart ? '0.3' : '1'};
     
   /* @media screen and (min-width: 768px) {
     opacity:1;

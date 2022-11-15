@@ -92,8 +92,7 @@ const SecondContainer = ({showScroll, showCart}) => {
 export default SecondContainer
 
 const MainSectionContainer = styled.div`
-   opacity:${(props) => props.showScroll ? "0.3" : "1"};
-   opacity:${(props) => props.showCart ? "0.3" : "1"};
+   opacity:${(props) => props.showScroll ? "0.3" : "1" && props.showCart ? "0.3" : '1'};
    
 `
 
