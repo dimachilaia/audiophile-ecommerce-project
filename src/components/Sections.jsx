@@ -15,40 +15,40 @@ import audioimg from '../assets/audiophile.svg'
 import fbicon from '../assets/fbicon.svg'
 import twittericon from '../assets/twitter.svg'
 import instaicon from '../assets/Shape.svg'
+import { Link } from 'react-router-dom'
 
 const Sections = ({showScroll, showCart}) => {
   return (
     <MainSection showScroll={showScroll} showCart={showCart}>
-    <div>
      <MainSectionDiv>
     <Section>
       <FirstSectContainer>
         <Img src={headphoneimage} alt="headphone"/>
         <HeadphonesInfo>
           <h5>HEADPHONES</h5>
-          <h4>Shop
+          <Link to="/audiophile-ecommerce-project/headphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:0.5}}>SHOP
           <img src={pathimage} alt="pathimage"/>
-          </h4>
+          </Link>
         </HeadphonesInfo>
       </FirstSectContainer>
 
       <FirstSectContainer>
       <Img src={speakerimage} alt="headphone"/>
       <HeadphonesInfo>
-        <h5>HEADPHONES</h5>
-        <h4>Shop
+        <h5>SPEAKERS</h5>
+        <Link to="/audiophile-ecommerce-project/speakers" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
         <img src={pathimage} alt="pathimage"/>
-        </h4>
+        </Link>
       </HeadphonesInfo>
     </FirstSectContainer>
 
     <FirstSectContainer>
     <Img src={earphonesimage} alt="headphone"/>
     <HeadphonesInfo>
-      <h5>HEADPHONES</h5>
-      <h4>Shop
+      <h5>EARPHONES</h5>
+      <Link to="/audiophile-ecommerce-project/earphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
        <img src={pathimage} alt="pathimage"/>
-      </h4>
+      </Link>
     </HeadphonesInfo>
    </FirstSectContainer>
   </Section>
@@ -116,7 +116,6 @@ const Sections = ({showScroll, showCart}) => {
               <img src={instaicon} alt="twicon"/>
             </Icons>
          </Footer>
-         </div>
     </MainSection>
   )
 }

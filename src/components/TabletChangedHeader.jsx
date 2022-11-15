@@ -9,7 +9,7 @@ const TabletChangedHeader = () => {
   return (
     <TabletHeader>
           <NavLink to="/audiophile-ecommerce-project" style={({isActive})=>{
-            // return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+            return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}>HOME</NavLink>
           <NavLink to="/audiophile-ecommerce-project/headphones" style={({isActive})=>{
             return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}

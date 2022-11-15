@@ -1,6 +1,7 @@
 import React from 'react'
 import FIrstContainer from '../SharedComponents/FIrstContainer'
 import styled from 'styled-components'
+import SecondContainer from '../SharedComponents/SecondContainer'
 
 const Speakers = ({showCart,setShowCart,showScroll,setShowScroll}) => {
   return (
@@ -9,6 +10,9 @@ const Speakers = ({showCart,setShowCart,showScroll,setShowScroll}) => {
       <MainSpeakerContainer showCart={showCart}>
         <h4>SPEAKERS</h4>
       </MainSpeakerContainer>
+
+      
+      <SecondContainer/>
     </SpeakersContainer>
   )
 }

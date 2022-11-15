@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import FIrstContainer from '../SharedComponents/FIrstContainer'
+import SecondContainer from '../SharedComponents/SecondContainer'
 
 const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
   return (
@@ -9,6 +10,7 @@ const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
         <MainEarphonesCOntainer showCart={showCart}>
           <h4>EARPHONES</h4>
         </MainEarphonesCOntainer>
+        <SecondContainer/>
     </EarphonesContainer>
   )
 }
