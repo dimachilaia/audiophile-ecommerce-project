@@ -15,7 +15,7 @@ import audioimg from '../assets/audiophile.svg'
 import fbicon from '../assets/fbicon.svg'
 import twittericon from '../assets/twitter.svg'
 import instaicon from '../assets/Shape.svg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Sections = ({showScroll, showCart}) => {
   return (
@@ -100,10 +100,21 @@ const Sections = ({showScroll, showCart}) => {
            <FooterDiv>
             <Line></Line>
               <img src={audioimg} alt="audioimage"/>
-               <h4>Home</h4>
+               <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
+                 <h4>Home</h4>
+              </NavLink>
+
+              <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
                <h4>HEADPHONES</h4>
-               <h4>SPEAKERS</h4>
-               <h4>EARPHONES</h4>
+              </NavLink>
+
+              <NavLink to="/speakers" style={{color:'white', textDecoration:'none'}}>
+                <h4>SPEAKERS</h4>
+              </NavLink>
+              
+              <NavLink to="/earphones" style={{color:'white', textDecoration:'none'}}>
+                <h4>EARPHONES</h4>
+              </NavLink>
            </FooterDiv> 
             <SecFooterDiv>
             <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>

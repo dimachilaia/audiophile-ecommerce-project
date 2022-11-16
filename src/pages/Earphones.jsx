@@ -26,7 +26,6 @@ const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
       </ChangeContainer>
       </FirstHeaderContainer>
 
-
         <SecondContainer showCart={showCart} showScroll={showScroll}/>
     </EarphonesContainer>
   )

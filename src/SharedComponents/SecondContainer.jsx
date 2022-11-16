@@ -4,7 +4,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import earphonesimage from '../assets/fo.svg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import pathimage from '../assets/Path 2.svg'
 import headphoneimage from '../assets/headphone.png'
 import speakerimage from '../assets/fi.svg'
@@ -67,10 +67,23 @@ const SecondContainer = ({showScroll, showCart}) => {
            <FooterDiv>
             <Line></Line>
               <img src={audioimg} alt="audioimage"/>
-               <h3>Home</h3>
-               <h3>HEADPHONES</h3>
-               <h3>SPEAKERS</h3>
-               <h3>EARPHONES</h3>
+
+              <NavLink to="/" style={{color:'white', textDecoration:'none'}}>
+              <h3>Home</h3>
+           </NavLink>
+
+           <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
+            <h3>HEADPHONES</h3>
+           </NavLink>
+
+           <NavLink to="/speakers" style={{color:'white', textDecoration:'none'}}>
+             <h3>SPEAKERS</h3>
+           </NavLink>
+           
+           <NavLink to="/earphones" style={{color:'white', textDecoration:'none'}}>
+             <h3>EARPHONES</h3>
+           </NavLink>
+            
            </FooterDiv> 
             <SecFooterDiv>
             <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
@@ -244,6 +257,7 @@ const FooterDiv = styled.div`
     margin-top:35px;
    }
    h3{
+    font-size:16px;
     padding-top:25px;
     :hover{
       cursor:pointer;
@@ -252,7 +266,6 @@ const FooterDiv = styled.div`
     }
    }
 `
-
 const SecFooterDiv = styled.div`
   margin-top:25px;
   padding:10px 20px;

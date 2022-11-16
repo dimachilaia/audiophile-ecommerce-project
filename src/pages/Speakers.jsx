@@ -148,10 +148,7 @@ const FirstHeaderContainer = styled.div`
     border-radius:5px;
    }
 }
-
-
 `
-
 
 // 
 const ChangeContainer = styled.div`
