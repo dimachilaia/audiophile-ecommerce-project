@@ -100,22 +100,24 @@ const Sections = ({showScroll, showCart}) => {
            <FooterDiv>
             <Line></Line>
               <img src={audioimg} alt="audioimage"/>
-               <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
-                 <h4>Home</h4>
-              </NavLink>
 
-              <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
-               <h4>HEADPHONES</h4>
-              </NavLink>
+              <NavLink to="/" style={({isActive})=>{
+                return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+              }}><h4>Home</h4></NavLink>
 
-              <NavLink to="/speakers" style={{color:'white', textDecoration:'none'}}>
-                <h4>SPEAKERS</h4>
-              </NavLink>
-              
-              <NavLink to="/earphones" style={{color:'white', textDecoration:'none'}}>
-                <h4>EARPHONES</h4>
-              </NavLink>
-           </FooterDiv> 
+              <NavLink to="/headphones" style={({isActive})=>{
+                return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+              }}><h4>HEADPHONES</h4></NavLink>
+
+              <NavLink to="/speakers" style={({isActive})=>{
+                return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+              }}><h4>SPEAKERS</h4></NavLink>
+
+              <NavLink to="/earphones" style={({isActive})=>{
+                return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+              }}><h4>EARPHONES</h4></NavLink>
+
+              </FooterDiv> 
             <SecFooterDiv>
             <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
             <h4>&copy; Copyright 2023. All Rights Reserved</h4>
@@ -503,7 +505,7 @@ const FooterDiv = styled.div`
       color:#D87D4A;
       transition: 0.32s;
     }
-   }
+  }
 `
 
 const SecFooterDiv = styled.div`

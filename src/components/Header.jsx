@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [showScroll, setShowScroll] = useState(false)
   const [showCart, setShowCart] = useState(false)
-  const [anotherScroll, setAnotherScroll ] = useState(true)
   
   // burger menu
  const showScrollHandler=()=>{

@@ -68,26 +68,26 @@ const SecondContainer = ({showScroll, showCart}) => {
             <Line></Line>
               <img src={audioimg} alt="audioimage"/>
 
-              <NavLink to="/" style={{color:'white', textDecoration:'none'}}>
-              <h3>Home</h3>
-           </NavLink>
+           <NavLink to="/" style={({isActive})=>{
+              return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}><h3>HOME</h3></NavLink>
 
-           <NavLink to="/headphones" style={{color:'white', textDecoration:'none'}}>
-            <h3>HEADPHONES</h3>
-           </NavLink>
+           <NavLink to="/headphones" style={({isActive})=>{
+              return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}><h3>HEADPHONES</h3></NavLink>
 
-           <NavLink to="/speakers" style={{color:'white', textDecoration:'none'}}>
-             <h3>SPEAKERS</h3>
-           </NavLink>
-           
-           <NavLink to="/earphones" style={{color:'white', textDecoration:'none'}}>
-             <h3>EARPHONES</h3>
-           </NavLink>
-            
+           <NavLink to="/speakers" style={({isActive})=>{
+              return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}><h3>SPEAKERS</h3></NavLink>
+
+           <NavLink to="/earphones" style={({isActive})=>{
+              return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
+          }}><h3>EARPHONES</h3></NavLink>
+
            </FooterDiv> 
             <SecFooterDiv>
-            <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
-            <h6>&copy; Copyright 2023. All Rights Reserved</h6>
+                <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+                <h6>&copy; Copyright 2023. All Rights Reserved</h6>
             </SecFooterDiv>
 
             <Icons>

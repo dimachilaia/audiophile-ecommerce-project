@@ -24,17 +24,17 @@ const showCartHandler = ()=>{
     <MainHead>
     <Head>
         <MobileImage>
-        <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
-         </MobileImage>
-         <Link to="/">
-           <img src={audioimage} alt="textimage"/>
-         </Link>
-         <TabletChangedHeader/>
-         <img src={cartimage} alt="cartimg" onClick={showCartHandler} style={{cursor:'pointer'}}/>
-         </Head>
-         <hr/>
-          {showCart && <SmallCart/>}
-          {showScroll && <ScrollingHead setShowScroll={setShowScroll}/>}
+            <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
+            </MobileImage>
+            <Link to="/">
+              <img src={audioimage} alt="textimage"/>
+            </Link>
+            <TabletChangedHeader/>
+            <img src={cartimage} alt="cartimg" onClick={showCartHandler} style={{cursor:'pointer'}}/>
+            </Head>
+            <hr/>
+              {showCart && <SmallCart/>}
+              {showScroll && <ScrollingHead setShowScroll={setShowScroll}/>}
          </MainHead>
   )
 }
