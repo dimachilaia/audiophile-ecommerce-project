@@ -6,16 +6,20 @@ import speakerimage from '../assets/fi.svg'
 import earphonesimage from '../assets/fo.svg'
 import pathimage from '../assets/Path 2.svg'
 import styled from 'styled-components'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const ScrollingHead = () => {
+const ScrollingHead = ({showScroll, setShowScroll}) => {
+
+  const showScrollHandler = ()=>{
+    setShowScroll(prev=>!prev)
+  }
 
   return (
-    <ScrollHeader>
+   <ScrollHeader showScroll={showScroll}>
         <div>
           <img src={headphoneimage} alt="headphone" />
           <div>
-          <NavLink to="/headphones" style={{color:'#000000', textDecoration:'none'}}>HEADPHONES</NavLink>
+          <NavLink to="/headphones" style={{color:'#000000', textDecoration:'none'}} onClick={showScrollHandler}>HEADPHONES</NavLink>
           <h6>SHOP
           <img src={pathimage} alt="pathimage"/>
          </h6>
@@ -25,7 +29,7 @@ const ScrollingHead = () => {
           <div>
             <img src={speakerimage} alt="speakerimg" />
             <div>
-            <NavLink to="/speakers" style={{color:'#000000', textDecoration:'none'}}>SPEAKERS</NavLink>
+            <NavLink to="/speakers" style={{color:'#000000', textDecoration:'none'}} onClick={showScrollHandler}>SPEAKERS</NavLink>
             <h6>SHOP
              <img src={pathimage} alt="pathimage"/>
             </h6>
@@ -35,29 +39,32 @@ const ScrollingHead = () => {
           <div>
             <img src={earphonesimage} alt="earphone" />
             <div>
-            <NavLink to="/earphones" style={{color:'#000000', textDecoration:'none'}}>EARPHONES</NavLink>
+            <NavLink to="/earphones" style={{color:'#000000', textDecoration:'none'}} onClick={showScrollHandler}>EARPHONES</NavLink>
             <h6>SHOP
             <img src={pathimage} alt="pathimage"/>
            </h6>
             </div>
           </div>
        </ScrollHeader> 
+    
   )
 }
 
 export default ScrollingHead
 
 const ScrollHeader = styled.div`
-  position:absolute;
-  color:white;
-  width:100%;
-  z-index:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  background-color:white;
-  margin-top:33px;
-  height:100vh;
+
+position:absolute;
+color:white;
+width:100%;
+z-index:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+background-color:white;
+margin-top:33px;
+height:100vh;
+display:${(props)=>props.showScroll && "flex"};
 
   div{
     display:flex;

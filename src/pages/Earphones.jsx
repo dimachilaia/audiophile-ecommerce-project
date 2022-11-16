@@ -6,6 +6,7 @@ import earphoneimg2 from '../assets/shared/desktop/Group 3.jpg'
 
 
 const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
+
   return (
     <EarphonesContainer >
       <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>
@@ -50,7 +51,6 @@ const EarphonesContainer = styled.div`
 
 const MainEarphonesCOntainer= styled.div`
     opacity:${(props) => props.showCart ? "0.07" : "1"};
- 
 `
 
 const FirstHeaderContainer = styled.div`

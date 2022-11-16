@@ -12,7 +12,6 @@ import ScrollingHead from '../components/ScrollingHead'
 
 const FIrstContainer = ({showScroll, setShowScroll, showCart, setShowCart,}) => {
 
-
   const showScrollHandler=()=>{
     setShowScroll(prev=>!prev);
 }
@@ -20,13 +19,14 @@ const FIrstContainer = ({showScroll, setShowScroll, showCart, setShowCart,}) => 
 const showCartHandler = ()=>{
     setShowCart(!showCart);
 }
+
   return (
     <MainHead>
     <Head>
         <MobileImage>
         <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
          </MobileImage>
-         <Link to="/audiophile-ecommerce-project">
+         <Link to="/">
            <img src={audioimage} alt="textimage"/>
          </Link>
          <TabletChangedHeader/>
@@ -34,7 +34,7 @@ const showCartHandler = ()=>{
          </Head>
          <hr/>
          {showCart && <SmallCart/>}
-         {showScroll && <ScrollingHead/>}
+         {showScroll && <ScrollingHead setShowScroll={setShowScroll}/>}
          </MainHead>
   )
 }

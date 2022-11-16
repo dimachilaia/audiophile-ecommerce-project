@@ -11,7 +11,7 @@ import SecondContainer from '../SharedComponents/SecondContainer'
 const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
   return (
     <HeadphoneContainer >
-     <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll} />
+     <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>
      <MainHeadphoneContainer showScroll={showScroll} showCart={showCart}>
       <h4>HEADPHONES</h4>
      </MainHeadphoneContainer>
@@ -74,6 +74,7 @@ const HeadphoneContainer = styled.div`
 `
 const MainHeadphoneContainer = styled.div`
     opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
+
 `
 
 const FirstHeaderContainer = styled.div`
@@ -83,6 +84,7 @@ const FirstHeaderContainer = styled.div`
   margin:20px auto;
   align-items:center;
   opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
+
   img{
     width:327px;
     height:300px;

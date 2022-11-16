@@ -5,7 +5,6 @@ import burgerImage from '../assets/icon-hamburger.svg'
 import cartimage from '../assets/Combined Shape.svg'
 import audioimage from '../assets/audiophile.svg'
 import TabletChangedHeader from '../components/TabletChangedHeader'
-
 import SmallCart from './SmallCart';
 import desktopimage from '../assets/home/desktop/image-hero.jpg'
 import Sections from './Sections';
@@ -15,7 +14,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [showScroll, setShowScroll] = useState(false)
   const [showCart, setShowCart] = useState(false)
-
+  const [anotherScroll, setAnotherScroll ] = useState(true)
+  
   // burger menu
  const showScrollHandler=()=>{
      setShowScroll(prev=>!prev);
@@ -30,10 +30,10 @@ const Header = () => {
     <FirstHeader >
       <MainHeader>
       <Head>
-      <MobileImage>
-      <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
+       <MobileImage>
+         <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
        </MobileImage>
-       <Link to="/audiophile-ecommerce-project">
+       <Link to="/">
          <img src={audioimage} alt="textimage" style={{cursor:'pointer'}}/>
        </Link>
        <TabletChangedHeader/>
@@ -43,7 +43,7 @@ const Header = () => {
 
         {showCart && <SmallCart />}
 
-       {showScroll && <ScrollingHead />}
+       {showScroll && <ScrollingHead showScroll={showScroll} setShowScroll={setShowScroll}/>}
 
 
       <BgImageCont showCart={showCart}>
