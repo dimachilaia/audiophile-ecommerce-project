@@ -8,16 +8,16 @@ const TabletChangedHeader = () => {
 
   return (
     <TabletHeader>
-          <NavLink to="/audiophile-ecommerce-project" style={({isActive})=>{
+          <NavLink to="/" style={({isActive})=>{
             return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}>HOME</NavLink>
-          <NavLink to="/audiophile-ecommerce-project/headphones" style={({isActive})=>{
+          <NavLink to="/headphones" style={({isActive})=>{
             return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}>HEADPHONES</NavLink>
-          <NavLink to="/audiophile-ecommerce-project/speakers" style={({isActive})=>{
+          <NavLink to="/speakers" style={({isActive})=>{
             return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}>SPEAKERS</NavLink>
-          <NavLink to="/audiophile-ecommerce-project/earphones" style={({isActive})=>{
+          <NavLink to="/earphones" style={({isActive})=>{
             return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}>EARPHONES</NavLink>
     </TabletHeader>

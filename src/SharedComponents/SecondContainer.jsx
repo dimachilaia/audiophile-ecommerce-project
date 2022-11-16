@@ -84,8 +84,6 @@ const SecondContainer = ({showScroll, showCart}) => {
             </Icons>
          </Footer>
       </MainSectionContainer>
-
-
   )
 }
 

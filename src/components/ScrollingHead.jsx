@@ -15,7 +15,7 @@ const ScrollingHead = () => {
         <div>
           <img src={headphoneimage} alt="headphone" />
           <div>
-          <NavLink to="/audiophile-ecommerce-project/headphones" style={{color:'#000000', textDecoration:'none'}}>HEADPHONES</NavLink>
+          <NavLink to="/headphones" style={{color:'#000000', textDecoration:'none'}}>HEADPHONES</NavLink>
           <h6>SHOP
           <img src={pathimage} alt="pathimage"/>
          </h6>
@@ -25,7 +25,7 @@ const ScrollingHead = () => {
           <div>
             <img src={speakerimage} alt="speakerimg" />
             <div>
-            <NavLink to="/audiophile-ecommerce-project/speakers" style={{color:'#000000', textDecoration:'none'}}>SPEAKERS</NavLink>
+            <NavLink to="/speakers" style={{color:'#000000', textDecoration:'none'}}>SPEAKERS</NavLink>
             <h6>SHOP
              <img src={pathimage} alt="pathimage"/>
             </h6>
@@ -35,7 +35,7 @@ const ScrollingHead = () => {
           <div>
             <img src={earphonesimage} alt="earphone" />
             <div>
-            <NavLink to="/audiophile-ecommerce-project/earphones" style={{color:'#000000', textDecoration:'none'}}>EARPHONES</NavLink>
+            <NavLink to="/earphones" style={{color:'#000000', textDecoration:'none'}}>EARPHONES</NavLink>
             <h6>SHOP
             <img src={pathimage} alt="pathimage"/>
            </h6>

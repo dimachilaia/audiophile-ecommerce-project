@@ -14,12 +14,12 @@ function App() {
   return (
     <Fragment>
      <Routes>
-       <Route path='/audiophile-ecommerce-project' element={<Header/>}/>
-       <Route path='/audiophile-ecommerce-project/headphones' element={<Headphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll} />}/>
+       <Route path='/' element={<Header/>}/>
+       <Route path='/headphones' element={<Headphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll} />}/>
 
-       <Route path='/audiophile-ecommerce-project/speakers' element={<Speakers showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
+       <Route path='/speakers' element={<Speakers showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
 
-       <Route path='/audiophile-ecommerce-project/earphones' element={<Earphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
+       <Route path='/earphones' element={<Earphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
        
      </Routes>
     </Fragment>

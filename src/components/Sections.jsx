@@ -26,7 +26,7 @@ const Sections = ({showScroll, showCart}) => {
         <Img src={headphoneimage} alt="headphone"/>
         <HeadphonesInfo>
           <h5>HEADPHONES</h5>
-          <Link to="/audiophile-ecommerce-project/headphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:0.5}}>SHOP
+          <Link to="/headphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:0.5}}>SHOP
           <img src={pathimage} alt="pathimage"/>
           </Link>
         </HeadphonesInfo>
@@ -36,7 +36,7 @@ const Sections = ({showScroll, showCart}) => {
       <Img src={speakerimage} alt="headphone"/>
       <HeadphonesInfo>
         <h5>SPEAKERS</h5>
-        <Link to="/audiophile-ecommerce-project/speakers" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
+        <Link to="/speakers" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
         <img src={pathimage} alt="pathimage"/>
         </Link>
       </HeadphonesInfo>
@@ -46,7 +46,7 @@ const Sections = ({showScroll, showCart}) => {
     <Img src={earphonesimage} alt="headphone"/>
     <HeadphonesInfo>
       <h5>EARPHONES</h5>
-      <Link to="/audiophile-ecommerce-project/earphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
+      <Link to="/earphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
        <img src={pathimage} alt="pathimage"/>
       </Link>
     </HeadphonesInfo>
