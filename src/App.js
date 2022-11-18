@@ -5,9 +5,9 @@ import Header from './components/Header';
 import Earphones from './pages/Earphones';
 import Headphones from './pages/Headphones';
 import Speakers from './pages/Speakers';
+import Products from './products/Products';
 
 function App() {
-
   const [showScroll, setShowScroll] = useState(false)
   const [showCart, setShowCart] = useState(false)
 
@@ -20,6 +20,8 @@ function App() {
        <Route path='/speakers' element={<Speakers showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
 
        <Route path='/earphones' element={<Earphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
+
+       <Route path='/headphones/:id' element={<Products showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
        
      </Routes>
     </Fragment>

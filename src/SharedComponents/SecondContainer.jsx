@@ -67,7 +67,6 @@ const SecondContainer = ({showScroll, showCart}) => {
            <FooterDiv>
             <Line></Line>
               <img src={audioimg} alt="audioimage"/>
-
            <NavLink to="/" style={({isActive})=>{
               return {color:isActive ? '#D87D4A' : 'white', textDecoration:'none'}
           }}><h3>HOME</h3></NavLink>

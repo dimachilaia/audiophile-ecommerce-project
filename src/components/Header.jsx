@@ -9,12 +9,12 @@ import SmallCart from './SmallCart';
 import desktopimage from '../assets/home/desktop/image-hero.jpg'
 import Sections from './Sections';
 import ScrollingHead from './ScrollingHead';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Header = () => {
   const [showScroll, setShowScroll] = useState(false)
   const [showCart, setShowCart] = useState(false)
-  
+ 
   // burger menu
  const showScrollHandler=()=>{
      setShowScroll(prev=>!prev);
@@ -28,8 +28,8 @@ const Header = () => {
   return (
     <FirstHeader >
       <MainHeader>
-      <Head>
-       <MobileImage>
+       <Head>
+        <MobileImage>
          <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
        </MobileImage>
        <Link to="/">
@@ -42,7 +42,7 @@ const Header = () => {
 
         {showCart && <SmallCart />}
 
-       {showScroll && <ScrollingHead showScroll={showScroll} setShowScroll={setShowScroll}/>}
+       {showScroll && <ScrollingHead showScroll={showScroll} setShowScroll={setShowScroll} showCart={showCart} setShowCart={setShowCart}/>}
 
 
       <BgImageCont showCart={showCart}>
@@ -50,7 +50,9 @@ const Header = () => {
             <h4>NEW PRODUCT</h4>
             <h5>XX99 Mark II HeadphoneS</h5>
             <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-            <button>SEE PRODUCT</button>
+            <Link to="headphones/4">
+              <button>SEE PRODUCT</button>
+            </Link>
         </div>
         </BgImageCont>
     </MainHeader>

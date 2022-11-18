@@ -33,8 +33,8 @@ const showCartHandler = ()=>{
             <img src={cartimage} alt="cartimg" onClick={showCartHandler} style={{cursor:'pointer'}}/>
             </Head>
             <hr/>
-              {showCart && <SmallCart/>}
-              {showScroll && <ScrollingHead setShowScroll={setShowScroll}/>}
+              {showCart &&  <SmallCart/>}
+              {showScroll && <ScrollingHead setShowScroll={setShowScroll} showScroll={showScroll}/>}
          </MainHead>
   )
 }

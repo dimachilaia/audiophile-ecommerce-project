@@ -5,16 +5,16 @@ import headphoneimg from '../assets/shared/desktop/image-xx99-mark-two-headphone
 import headphoneimg2 from '../assets/shared/desktop/image-xx99-mark-one-headphones.jpg'
 import headphoneimg3 from '../assets/shared/desktop/image-xx59-headphones.jpg'
 import SecondContainer from '../SharedComponents/SecondContainer'
-
+import { Link } from 'react-router-dom'
 
 
 const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
   return (
     <HeadphoneContainer >
-     <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>
-     <MainHeadphoneContainer showScroll={showScroll} showCart={showCart}>
-      <h4>HEADPHONES</h4>
-     </MainHeadphoneContainer>
+    <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>
+      <MainHeadphoneContainer showScroll={showScroll} showCart={showCart}>
+        <h4>HEADPHONES</h4>
+      </MainHeadphoneContainer>
 
        <FirstHeaderContainer showCart={showCart} showScroll={showScroll}>
           <ChangeContainer>
@@ -23,7 +23,9 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
               <h3>NEW PRODUCT</h3>
               <h1>XX99 Mark II Headphones</h1>
               <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone  experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-              <button>See Product</button>
+              <Link to="/headphones/4">
+                <button>See Product</button>
+              </Link>
             </ForFlexCont>
           </ChangeContainer>
           </FirstHeaderContainer>
@@ -34,7 +36,9 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
              <ForFlexCont>
                 <h1>XX99 Mark I Headphones</h1>
                 <p>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
+                <Link to="/headphones/3">
                 <button>See Product</button>
+              </Link>
              </ForFlexCont>
          </ChangeContainer>
      </FirstHeaderContainer>
@@ -46,7 +50,9 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
           <ForFlexCont >
               <h1>XX59 Headphones</h1>
               <p>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-              <button>See Product</button>
+              <Link to="/headphones/2">
+                <button>See Product</button>
+              </Link>
           </ForFlexCont>
         </ChangeContainer>
      </FirstHeaderContainer>
