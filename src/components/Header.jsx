@@ -31,7 +31,7 @@ const Header = () => {
        <Head>
         <MobileImage>
          <img src={burgerImage} alt="burgerimg" style={{width:'17px', height:'16px', cursor:'pointer'}} onClick={showScrollHandler}/>
-       </MobileImage>
+         </MobileImage>
        <Link to="/">
          <img src={audioimage} alt="textimage" style={{cursor:'pointer'}}/>
        </Link>

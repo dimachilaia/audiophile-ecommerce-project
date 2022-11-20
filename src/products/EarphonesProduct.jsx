@@ -4,17 +4,30 @@ import SecondContainer from "../SharedComponents/SecondContainer"
 import data from '../data.json'
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import {useDispatch} from 'react-redux'
+import { addToCart } from "../redux/CartSlice"
 
 const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
-    const {id} = useParams()
-    const filteredData = data.find((item)=> +item.id === +id)
+    const {useid} = useParams()
+    const filteredData = data.find((item)=> +item.id === +useid)
     const category = filteredData.category[0].toUpperCase() + filteredData.category.slice(1);
+    const [itemNumber, setItemNumber] = useState(1)
+    const dispatch = useDispatch();
+    const {name, price, id, image} = filteredData;
 
-   console.log(filteredData)
+    const incrementHandler = ()=>{
+      setItemNumber(itemNumber + 1 )
+    }
+    const decrementHandler = ()=>{
+      if(itemNumber > 1){
+       setItemNumber(itemNumber - 1)
+      }
+    }
 
   return (
     <MainCOntainer >
-    <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll} />
+    <FIrstContainer showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>
         <p>Go Back</p>
 
         <Wrapper showCart={showCart} showScroll={showScroll}>
@@ -24,16 +37,17 @@ const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
         </ImgContainer>
 
           <Container>
+
           <h4>NEW PRODUCT</h4>
           <h6>{filteredData.slug}</h6>
           <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
           <h3>$ {filteredData.price}</h3>
            <AddToCartInfo>
-               <span>-</span>
-               <h4>1</h4>
-               <span>+</span>
+               <span onClick={decrementHandler}>-</span>
+               <h4>{itemNumber}</h4>
+               <span onClick={incrementHandler}>+</span>
             </AddToCartInfo>
-            <button>ADD TO CART</button>
+            <button onClick={()=>dispatch(addToCart({name, price, id, image}))}>ADD TO CART</button>
           </Container>
           </MainWrapper>
         </Wrapper>
@@ -345,10 +359,7 @@ const FilterMap = styled.div`
     display:flex;
     justify-content:space-evenly;
   }
-
 `
-
-
 const MappedDiv = styled.div`
     text-align:center;
     

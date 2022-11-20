@@ -10,7 +10,7 @@ import SmallCart from '../components/SmallCart'
 import { Link } from 'react-router-dom'
 import ScrollingHead from '../components/ScrollingHead'
 
-const FIrstContainer = ({showScroll, setShowScroll, showCart, setShowCart,}) => {
+const FIrstContainer = ({showScroll, setShowScroll, showCart, setShowCart, items}) => {
 
   const showScrollHandler=()=>{
     setShowScroll(prev=>!prev);
@@ -33,7 +33,7 @@ const showCartHandler = ()=>{
             <img src={cartimage} alt="cartimg" onClick={showCartHandler} style={{cursor:'pointer'}}/>
             </Head>
             <hr/>
-              {showCart &&  <SmallCart/>}
+              {showCart &&  <SmallCart items= {items}/>}
               {showScroll && <ScrollingHead setShowScroll={setShowScroll} showScroll={showScroll}/>}
          </MainHead>
   )

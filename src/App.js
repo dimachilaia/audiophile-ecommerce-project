@@ -24,11 +24,11 @@ function App() {
 
        <Route path='/earphones' element={<Earphones showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>} />
 
-       <Route path='/headphones/:id' element={<Products showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
+       <Route path='/headphones/:useid' element={<Products showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
 
-       <Route path='/speakers/:id' element={<SpeakersProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
+       <Route path='/speakers/:useid' element={<SpeakersProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
 
-       <Route path='/earphones/:id' element={<EarphonesProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
+       <Route path='/earphones/:useid' element={<EarphonesProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
 
        <Route path='/checkout' element={<Checkout showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
        

@@ -1,94 +1,99 @@
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import smallimage from '../assets/Group 22.svg'
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-
-const SmallCart = () => {    
+const SmallCart = () => {
+  const cart = useSelector((state) => state.cart.itemsList);
+  const totalPrice = cart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)
   
+    
   return (
-    <Cart>
-        <div>
-         <span>CART (4)</span>
-         <h5>Remove all</h5>
-        </div>
-        
-        <SecondCart>
-        <Info>
-            <img src={smallimage} alt="small"/>
-          <StaticInfo>
-           <span>XX99 MK II</span>
-           <h6>$ 2,999</h6>
-          </StaticInfo>
-        </Info>
-        <NumbersCart>
-                <h3>-</h3>
-                <h3>1</h3>
-                <h3>+</h3>
-        </NumbersCart>
-      </SecondCart>
-      
+    cart.length >= 1 ?  <Cart>
+      <div>
+        <span>CART</span>
+        <h5>Remove all</h5>
+      </div>
 
       <SecondCart>
-      <Info>
-          <img src={smallimage} alt="small"/>
-        <StaticInfo>
-         <span>XX99 MK II</span>
-         <h6>$ 2,999</h6>
-        </StaticInfo>
-      </Info>
-      <NumbersCart>
-              <h3>-</h3>
-              <h3>1</h3>
-              <h3>+</h3>
-      </NumbersCart>
-    </SecondCart>
+      {cart.map((item)=>{
+          return <Info key={item.id}>
+          <div>
+          <img src={process.env.PUBLIC_URL + item.image.mobile} alt={item.name} />
+          <StaticInfo>
+          <span>{item.name.slice(0, 3)}</span>
+          <h6>{item.price}</h6>
+          </StaticInfo>
+          </div>
+          
+          <NumbersCart>
+            <h3>-</h3>
+            <h3>1</h3>
+            <h3>+</h3> 
+        </NumbersCart>
+        </Info>
+        })}
+      </SecondCart>
 
-        <Total>
-            <h3>TOTAL</h3>
-            <h4>$ 5,396</h4>
-        </Total>
-          <Link to="/checkout">
-            <Button>checkout</Button>
-          </Link>
-    </Cart>
-   
-  )
-}
+      <Total>
+        <h3>TOTAL</h3>
+        <h4>{totalPrice}</h4>
+      </Total>
+      <Link to="/checkout" style={{textDecoration:'none'}}>
+        <Button>checkout</Button>
+      </Link>
+    </Cart> : 
+    
+    <Cart>
+      <div>
+        <span>CART</span>
+        <h5>Remove all</h5>
+      </div>
 
-export default SmallCart
+
+      
+      <Total>
+        <h3>TOTAL</h3>
+        <h4>{totalPrice}</h4>
+      </Total>
+      <Link to="/checkout" style={{textDecoration:'none'}}>
+        <Button disabled>checkout</Button>
+      </Link>
+    </Cart> 
+  );
+};
+
+export default SmallCart;
 
 const Cart = styled.div`
-   position:absolute;
-   height:auto;
-   width:calc(100% - 48px);
-   z-index:2;
-   margin: 45px 20px;
-   background-color:white;
-   border-radius:10px;
+  position: absolute;
+  height: auto;
+  width: calc(100% - 48px);
+  z-index: 2;
+  margin: 45px 20px;
+  background-color: white;
+  border-radius: 10px;
 
-
-
-   @media screen and (min-width: 768px) {
-    width:400px;
-    right:75px;
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    right: 75px;
   }
 
- div{
-   display:flex;
-   align-items:center;
-   justify-content:space-around;
-   transform:translateY(40px);
-}
-span{
+  div {
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(25px);
+    align-items:center;
+  }
+  span {
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 1.28571px;
     text-transform: uppercase;
     color: #000000;
-}
- 
- h5{
+  }
+
+  h5 {
     font-weight: 500;
     font-size: 15px;
     line-height: 25px;
@@ -96,42 +101,46 @@ span{
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.5;
- }
-`
+  }
+`;
 
 const SecondCart = styled.div`
-`
+display:flex;
+flex-direction:column;
+`;
 const Info = styled.div`
-    display:flex;
-    align-items:center;
-    gap:10px;
- h6{
-    padding-bottom:50px;
+width:380px;
+  h6 {
+    padding-bottom: 50px;
     font-size: 14px;
     line-height: 25px;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.5;
- }
-`
+  }
+  img{
+    width:75px;
+    border-radius:10px;
+  };
+`;
 const StaticInfo = styled.div`
- display:flex;
- flex-direction:column;
- margin-bottom:20px;
-`
+  display: flex;
+  flex-direction: column;
+  padding-left:15px;
+`;
 
 const NumbersCart = styled.div`
-  background-color:#F1F1F1;
-  width:96px;
-  height:32px;
-`
-const Total= styled.div`
-  margin-top:40px;
-  display:flex;
-  gap:50px;
-  justify-content:space-between;
-  h3{
-    font-family: 'Manrope';
+  background-color: #f1f1f1;
+  width: 96px;
+  height: 32px;
+`;
+const Total = styled.div`
+  margin-top: 55px;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  h3 {
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
@@ -140,29 +149,28 @@ const Total= styled.div`
     mix-blend-mode: normal;
     opacity: 0.5;
   }
- 
-`
-const Button= styled.button`
- background-color:#D87D4A;
- width:80%;
- height:48px;
- text-decoration:none;
- border:none;
- color:white;
- text-align: center;
- letter-spacing: 1px;
- align-items:center;
- margin:50px auto;
- display:flex;
- justify-content:center;
- text-transform: uppercase;
- color: #FFFFFF;
- border-radius:4px;
- font-weight:bold;
- font-size:16px;
- cursor:pointer;
- &:hover{
-    opacity:0.7;
-    transition:.35s;
- }
-`
+`;
+const Button = styled.button`
+  background-color: #d87d4a;
+  width: 80%;
+  height: 48px;
+  text-decoration: none;
+  border: none;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  align-items: center;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.35s;
+  }
+`;
