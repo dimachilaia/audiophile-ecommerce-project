@@ -3,10 +3,13 @@ import FIrstContainer from "../SharedComponents/FIrstContainer"
 import SecondContainer from "../SharedComponents/SecondContainer"
 import data from '../data.json'
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
     const {id} = useParams()
     const filteredData = data.find((item)=> +item.id === +id)
+    const category = filteredData.category[0].toUpperCase() + filteredData.category.slice(1);
+
    console.log(filteredData)
 
   return (
@@ -68,11 +71,15 @@ const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
         <h3>YOU MAY ALSO LIKE</h3>
         <FilterMap>
           {filteredData.others.map((item, index)=>{
+            const itemId = data.find(product => product.slug === item.slug).id;
+
             return (
                <MappedDiv key={index}>
               <img src={process.env.PUBLIC_URL + item.image.mobile} alt={item.name} />
               <h5>{item.name}</h5>
-              <button>SEE PRODUCT</button>
+              <Link to={`/${category}/${itemId}`}>
+                <button>SEE PRODUCT</button>
+              </Link>
             </MappedDiv>)
           })}
           </FilterMap>
@@ -349,7 +356,12 @@ const MappedDiv = styled.div`
       width:300px;
       border-radius:10px;
       @media screen and (min-width: 768px) {
-      height:220px
+      height:220px;
+      width:60%;
+  }
+  @media screen and (min-width: 1024px) {
+      width:84%;
+      height:260px;
   }
     }
    

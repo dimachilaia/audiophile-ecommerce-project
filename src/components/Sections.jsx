@@ -61,7 +61,9 @@ const Sections = ({showScroll, showCart}) => {
      <SectionTexts>
       <h4>ZX9 SPEAKER</h4>
       <p>Upgrade to premium speakers Upgrade to premium speakers t Upgrade to premium speakers tthat are phenomenally built to deliver truly remarkable sound.</p>
-      <button>SEE PRODUCT</button>
+      <Link to="/speakers/6">
+        <button>SEE PRODUCT</button>
+      </Link>
      </SectionTexts>
      </div>
      </SecondSectionsContainer>
@@ -69,7 +71,9 @@ const Sections = ({showScroll, showCart}) => {
      <SpeakerCont>
       <div>
         <h4>ZX7 SPEAKER</h4>
+        <Link to="/speakers/5">
         <button>SEE PRODUCT</button>
+      </Link>
       </div>
     </SpeakerCont>
 
@@ -78,7 +82,9 @@ const Sections = ({showScroll, showCart}) => {
 
          <div>
            <h5>YX1 EARPHONES</h5>
-           <button>See Product</button>
+           <Link to="/earphones/1">
+           <button>SEE PRODUCT</button>
+         </Link>
         </div>
       </FlexedSection>
 
@@ -256,7 +262,6 @@ const SectionTexts = styled.div`
   }
   button{
     @media screen and (min-width: 1024px) {
-      width:50%;
       padding:30px 35px;
       margin-top:-40px;
       font-size:18px;

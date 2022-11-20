@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import smallimage from '../assets/Group 22.svg'
 
 
-const SmallCart = ({}) => {    
+const SmallCart = () => {    
   
   return (
     <Cart>
@@ -46,7 +47,9 @@ const SmallCart = ({}) => {
             <h3>TOTAL</h3>
             <h4>$ 5,396</h4>
         </Total>
-             <Button>checkout</Button>
+          <Link to="/checkout">
+            <Button>checkout</Button>
+          </Link>
     </Cart>
    
   )
@@ -155,6 +158,8 @@ const Button= styled.button`
  text-transform: uppercase;
  color: #FFFFFF;
  border-radius:4px;
+ font-weight:bold;
+ font-size:16px;
  cursor:pointer;
  &:hover{
     opacity:0.7;

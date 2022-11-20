@@ -2,6 +2,7 @@
 import {Fragment, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Checkout from './pages/Checkout';
 import Earphones from './pages/Earphones';
 import Headphones from './pages/Headphones';
 import Speakers from './pages/Speakers';
@@ -28,6 +29,8 @@ function App() {
        <Route path='/speakers/:id' element={<SpeakersProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
 
        <Route path='/earphones/:id' element={<EarphonesProduct showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
+
+       <Route path='/checkout' element={<Checkout showCart={showCart} setShowCart={setShowCart} showScroll={showScroll} setShowScroll={setShowScroll}/>}/>
        
      </Routes>
     </Fragment>
