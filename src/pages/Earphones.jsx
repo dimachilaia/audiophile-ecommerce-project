@@ -1,9 +1,8 @@
-import React from 'react'
 import styled from 'styled-components'
 import FIrstContainer from '../SharedComponents/FIrstContainer'
 import SecondContainer from '../SharedComponents/SecondContainer'
 import earphoneimg2 from '../assets/shared/desktop/Group 3.jpg'
-
+import { Link } from 'react-router-dom'
 
 const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
 
@@ -21,7 +20,9 @@ const Earphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
           <h3>NEW PRODUCT</h3>
           <h1>YX1 WIRELESS EARPHONES</h1>
           <p>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
-          <button>See Product</button>
+          <Link to="/earphones/1">
+           <button>See Product</button>
+        </Link>
         </ForFlexCont>
       </ChangeContainer>
       </FirstHeaderContainer>

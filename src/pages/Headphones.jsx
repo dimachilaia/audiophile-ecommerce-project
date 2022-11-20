@@ -50,9 +50,11 @@ const Headphones = ({showCart,setShowCart,showScroll,setShowScroll}) => {
           <ForFlexCont >
               <h1>XX59 Headphones</h1>
               <p>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+
               <Link to="/headphones/2">
                 <button>See Product</button>
               </Link>
+
           </ForFlexCont>
         </ChangeContainer>
      </FirstHeaderContainer>
@@ -178,11 +180,12 @@ const ChangeContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     display:flex;
+
   img{
      width:450px;
      height:500px;
+    }
   }
-}
 `
 
 const ForFlexCont = styled.div`

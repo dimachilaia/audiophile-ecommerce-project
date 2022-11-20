@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import FIrstContainer from '../SharedComponents/FIrstContainer'
 import styled from 'styled-components'
 import SecondContainer from '../SharedComponents/SecondContainer'
@@ -21,7 +21,9 @@ const Speakers = ({showCart,setShowCart,showScroll,setShowScroll}) => {
           <h3>NEW PRODUCT</h3>
           <h1>ZX9 speaker</h1>
           <p>Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>
+          <Link to="/speakers/6">
           <button>See Product</button>
+        </Link>
         </ForFlexCont>
       </ChangeContainer>
       </FirstHeaderContainer>
@@ -32,7 +34,9 @@ const Speakers = ({showCart,setShowCart,showScroll,setShowScroll}) => {
          <ForFlexCont>
             <h1>ZX7 SPEAKER</h1>
             <p>Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
+            <Link to="/speakers/5">
             <button>See Product</button>
+          </Link>
          </ForFlexCont>
      </ChangeContainer>
  </FirstHeaderContainer>

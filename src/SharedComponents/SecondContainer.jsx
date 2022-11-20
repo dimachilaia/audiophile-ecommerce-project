@@ -23,7 +23,7 @@ const SecondContainer = ({showScroll, showCart}) => {
         <Img src={headphoneimage} alt="headphone"/>
       <HeadphonesInfo>
         <h5>HEADPHONES</h5>
-         <Link to="/headphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:0.5}}>SHOP
+         <Link to="/headphones" style={{textDecoration:'none', color:'#000000', fontSize:'25px', opacity:0.5, }}>SHOP
          <img src={pathimage} alt="pathimage"/>
         </Link>
      </HeadphonesInfo>
@@ -33,7 +33,7 @@ const SecondContainer = ({showScroll, showCart}) => {
      <Img src={speakerimage} alt="headphone"/>
        <HeadphonesInfo>
         <h5>SPEAKERS</h5>
-        <Link to="/speakers" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
+        <Link to="/speakers" style={{textDecoration:'none', color:'#000000', fontSize:'25px', opacity:'0.5'}}>SHOP
         <img src={pathimage} alt="pathimage"/>
         </Link>
       </HeadphonesInfo>
@@ -43,7 +43,7 @@ const SecondContainer = ({showScroll, showCart}) => {
        <Img src={earphonesimage} alt="headphone"/>
        <HeadphonesInfo>
         <h5>EARPHONES</h5>
-        <Link to="/earphones" style={{textDecoration:'none', color:'#000000', fontSize:'13px', opacity:'0.5'}}>SHOP
+        <Link to="/earphones" style={{textDecoration:'none', color:'#000000', fontSize:'25px', opacity:'0.5'}}>SHOP
         <img src={pathimage} alt="pathimage"/>
        </Link>
       </HeadphonesInfo>
@@ -123,8 +123,12 @@ background-color:#F1F1F1;
   margin:45px auto;
 
   @media screen and (min-width: 768px) {
-    width:250px;
-    margin:33px auto;
+    margin:20px auto;
+    height:250px;
+    width:210px;
+  }
+  @media screen and (min-width: 1024px) {
+    width:340px;
   }
 
 `
@@ -142,6 +146,9 @@ const HeadphonesInfo = styled.div`
     letter-spacing: 1.07143px;
     text-transform: uppercase;
     color: #000000;
+    @media screen and (min-width: 768px) {
+      font-size:30px;
+  }
   }
   h4{
     font-size: 13px;
