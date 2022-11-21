@@ -14,7 +14,7 @@ const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
     const category = filteredData.category[0].toUpperCase() + filteredData.category.slice(1);
     const [itemNumber, setItemNumber] = useState(1)
     const dispatch = useDispatch();
-    const {name, price, id, image} = filteredData;
+    const {name, price, id, image, quantity} = filteredData;
 
     const incrementHandler = ()=>{
       setItemNumber(itemNumber + 1 )
@@ -47,7 +47,7 @@ const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
                <h4>{itemNumber}</h4>
                <span onClick={incrementHandler}>+</span>
             </AddToCartInfo>
-            <button onClick={()=>dispatch(addToCart({name, price, id, image}))}>ADD TO CART</button>
+            <button onClick={()=>dispatch(addToCart({name, price, id, image, quantity}))}>ADD TO CART</button>
           </Container>
           </MainWrapper>
         </Wrapper>
@@ -73,7 +73,7 @@ const Products = ({showCart,setShowCart, showScroll, setShowScroll}) => {
 
         </InfoDiv>
 
-        <ContainerImages>
+        <ContainerImages showScroll={showScroll} showCart={showCart}>
           <FirstTwoIMage>
            <img src={process.env.PUBLIC_URL + filteredData.gallery.first.mobile} alt={filteredData.name} />
            <img src={process.env.PUBLIC_URL + filteredData.gallery.second.mobile} alt={filteredData.name} />
@@ -317,6 +317,7 @@ const MappedBox = styled.div`
  }
 `
 const ContainerImages = styled.div`
+    opacity:${(props) => props.showCart ? "0.3" : '1' && props.showScroll ? '0.3' : '1'};
  display:flex;
  flex-direction:column;
  gap:10px;

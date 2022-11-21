@@ -1,34 +1,51 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { decrementHandler, incrementHandler } from "../redux/CartSlice";
 
 const SmallCart = () => {
   const cart = useSelector((state) => state.cart.itemsList);
-  const totalPrice = cart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)
+  // const totalPrice = cart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)
+  const totalPrice = useSelector((state)=>state.cart.totalPrice)
+  const dispatch = useDispatch()    
+  // const value = useSelector((state)=>state.cart.value);
+  const totalQuantity = useSelector((state)=>state.cart.totalQuantity);
   
-    
+  const getTotal = () => {
+    let totalPrice = 0
+    cart.forEach(item => {
+      // totalQuantity += item.quantity
+      totalPrice += item.price * item.quantity
+    })
+    return {totalPrice, totalQuantity}
+  }
+
+
   return (
     cart.length >= 1 ?  <Cart>
       <div>
-        <span>CART</span>
+        <span>CART: {totalQuantity}</span>
         <h5>Remove all</h5>
       </div>
 
       <SecondCart>
       {cart.map((item)=>{
+        const {id} = item;
+        
           return <Info key={item.id}>
           <div>
           <img src={process.env.PUBLIC_URL + item.image.mobile} alt={item.name} />
-          <StaticInfo>
-          <span>{item.name.slice(0, 3)}</span>
-          <h6>{item.price}</h6>
-          </StaticInfo>
+            <StaticInfo>
+            <span>{item.name.slice(0, 3)}</span>
+            <h6>{item.price}</h6>
+            </StaticInfo>
           </div>
           
           <NumbersCart>
-            <h3>-</h3>
-            <h3>1</h3>
-            <h3>+</h3> 
+            <h3 style={{cursor:'pointer'}} onClick={()=>dispatch(decrementHandler({id}))}>-</h3>
+            <h3>{totalQuantity}</h3>
+            <h3 style={{cursor:'pointer'}} onClick={()=>dispatch(incrementHandler())}>+</h3> 
         </NumbersCart>
         </Info>
         })}
@@ -36,7 +53,7 @@ const SmallCart = () => {
 
       <Total>
         <h3>TOTAL</h3>
-        <h4>{totalPrice}</h4>
+        <h4>{getTotal().totalPrice}</h4>
       </Total>
       <Link to="/checkout" style={{textDecoration:'none'}}>
         <Button>checkout</Button>
@@ -48,8 +65,10 @@ const SmallCart = () => {
         <span>CART</span>
         <h5>Remove all</h5>
       </div>
-
-
+        
+      <EmptyCard>
+        <p>CART IS EMPTY</p>
+      </EmptyCard>
       
       <Total>
         <h3>TOTAL</h3>
@@ -174,3 +193,12 @@ const Button = styled.button`
     transition: 0.35s;
   }
 `;
+
+const EmptyCard = styled.div`
+   p{
+    text-align:center;
+    transform:translateY(35px);
+    font-size:18px;
+    opacity:0.6;
+   }
+`
